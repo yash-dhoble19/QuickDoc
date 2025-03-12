@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/et_patient_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Patient Name"
+        android:inputType="textPersonName"/>
+
+    <EditText
+        android:id="@+id/et_diagnosis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Diagnosis"
+        android:inputType="textMultiLine"
+        android:minLines="3"/>
+
+    <!-- Add after diagnosis field -->
+    <LinearLayout
+        android:id="@+id/medicine_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medicines Prescribed"
+            android:textStyle="bold"/>
+
+        <!-- Template for medicine input (initially hidden) -->
+        <LinearLayout
+            android:id="@+id/medicine_template"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/et_medicine_name"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Medicine Name"/>
+
+            <EditText
+                android:id="@+id/et_dosage"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Dosage"/>
+
+            <EditText
+                android:id="@+id/et_duration"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Duration"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_add_medicine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Medicine"/>
+    </LinearLayout>
+</LinearLayout>

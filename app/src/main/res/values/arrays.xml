@@ -1,0 +1,9 @@
+<resources>
+    <string-array name="specialist_array">
+        <item>Cardiologist</item>
+        <item>Dermatologist</item>
+        <item>Neurologist</item>
+        <item>Pediatrician</item>
+        <item>Orthopedic</item>
+    </string-array>
+</resources>

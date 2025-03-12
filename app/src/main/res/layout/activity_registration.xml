@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/gradient_background"
+    android:padding="20dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+
+            android:elevation="8dp"
+            android:paddingVertical="24dp">
+
+            <!-- App Logo -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/app_logo"
+                android:layout_gravity="center_horizontal"
+                android:contentDescription="@string/app_logo_description"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Email Field -->
+            <EditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                app:startIconDrawable="@drawable/ic_email"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:background="@drawable/rounded_input_field"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Password Field -->
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:background="@drawable/rounded_input_field"
+                app:startIconDrawable="@drawable/ic_password"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Role Selection -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Role"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/roleRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <RadioButton
+                    android:id="@+id/userRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="User"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:paddingVertical="6dp"/>
+
+                <RadioButton
+                    android:id="@+id/adminRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Admin"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:paddingVertical="6dp"/>
+
+                <RadioButton
+                    android:id="@+id/doctorRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor"
+                    android:textColor="@color/white"
+                    android:buttonTint="@color/white"
+                    android:paddingVertical="6dp"/>
+            </RadioGroup>
+
+            <!-- Dynamic Fields (Hidden initially) -->
+            <EditText
+                android:id="@+id/hospitalCodeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hospital Code"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:background="@drawable/rounded_input_field"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/hospitalNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hospital Name"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:background="@drawable/rounded_input_field"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/doctorNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Doctor Name"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/light_gray"
+                android:background="@drawable/rounded_input_field"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+            <!-- Doctor Fields (Visible for Doctor) -->
+            <!-- Replace the specialization EditText with this Spinner -->
+            <Spinner
+                android:id="@+id/specializationSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:backgroundTint="@color/white"
+                android:spinnerMode="dropdown"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/collegeNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="College Name"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+            <EditText
+                android:id="@+id/experienceEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Experience"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+
+            <!-- Doctor ID Field (Visible for Doctor) -->
+            <EditText
+                android:id="@+id/doctorIdEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Doctor ID"
+                android:inputType="text"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"/>
+
+
+
+            <!-- Register Button -->
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:background="@drawable/rounded_button"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

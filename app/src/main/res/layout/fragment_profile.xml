@@ -1,0 +1,52 @@
+<!-- res/layout/fragment_profile.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/etHospitalName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hospital Name" />
+
+    <EditText
+        android:id="@+id/etHospitalCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hospital Code" />
+
+    <EditText
+        android:id="@+id/etTotalEmployees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Total Employees"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/etHospitalAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hospital Address" />
+
+    <EditText
+        android:id="@+id/etContactNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact Number"
+        android:inputType="phone" />
+
+    <EditText
+        android:id="@+id/etDepartments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Departments (comma-separated)" />
+
+    <Button
+        android:id="@+id/btnSaveHospital"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Hospital Information" />
+
+</LinearLayout>

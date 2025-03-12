@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">QuickDoc</string>
+
+    <string name="app_logo_description">QuickDoctor App Logo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello</string>
+    <string-array name="sex_options">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="blood_group_options">
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>O+</item>
+        <item>O-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+    </string-array>
+
+
+    <string-array name="specializations">
+        <item>Cardiologist</item>
+        <item>Dermatologist</item>
+        <item>Neurologist</item>
+        <item>Pediatrician</item>
+        <item>Orthopedic</item>
+    </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="profile_image_desc">Profile Image for user profile</string>
+
+        <string name="profile_icon_desc">Profile Image for user profile</string>
+
+
+</resources>
+
+
