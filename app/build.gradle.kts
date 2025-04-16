@@ -58,7 +58,7 @@ dependencies {
 
             implementation ("com.squareup.retrofit2:retrofit:2.9.0")
             implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-
+        implementation ("androidx.viewpager2:viewpager2:1.0.0")
 
         // Required Guava version
         implementation("com.google.guava:guava:32.0.0-android")

@@ -5,11 +5,14 @@ public class Report {
     private String reportDate;
     private String diagnosis;
 
+
+
     // Constructor
     public Report(String patientName, String reportDate, String diagnosis) {
         this.patientName = patientName;
         this.reportDate = reportDate;
         this.diagnosis = diagnosis;
+
     }
 
     // Getters
@@ -24,4 +27,6 @@ public class Report {
     public String getDiagnosis() {
         return diagnosis;
     }
+
+
 }

@@ -1,115 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/lightGrey">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <!-- Background Image -->
+    <ImageView
+        android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_bg"
+        android:alpha="0.3"/>
+
+    <!-- Scrollable Layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:padding="16dp"
-        android:background="@drawable/rounded_bg"
-        android:elevation="4dp">
+        android:fadeScrollbars="false">
 
-        <!-- User Name -->
-        <EditText
-            android:id="@+id/userNameEditText"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Name"
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey"
-            android:background="@drawable/input_field_bg"
-            android:minHeight="50dp"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            android:orientation="vertical"
+            android:padding="16dp"
 
-        <!-- Hospital Name (AutoCompleteTextView) -->
-        <AutoCompleteTextView
-            android:id="@+id/hospitalNameAutoComplete"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Select Hospital"
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey"
-            android:background="@drawable/input_field_bg"
-            android:minHeight="50dp"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            android:elevation="6dp">
 
-        <!-- Hospital Code (Display Only) -->
-        <TextView
-            android:id="@+id/hospitalCodeTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hospital Code: "
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:background="@drawable/info_card_bg"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
+            <!-- User Name -->
 
-        <!-- Problem Description -->
-        <EditText
-            android:id="@+id/problemDescriptionEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Problem Description (Optional)"
-            android:inputType="textMultiLine"
-            android:textColor="@color/black"
-            android:textColorHint="@color/grey"
-            android:background="@drawable/input_field_bg"
-            android:minHeight="100dp"
-            android:padding="12dp"
-            android:layout_marginBottom="16dp"/>
 
-        <!-- Select Doctor -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Select Doctor"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            android:layout_marginBottom="8dp"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:boxBackgroundMode="outline"
+                    app:boxBackgroundColor="@android:color/transparent"
+                    app:boxStrokeColor="@color/white"
+                    app:hintTextColor="@color/black"
+                    app:startIconTint="@color/white"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/white">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/doctorsRecyclerView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/info_card_bg"
-            android:padding="8dp"
-            android:layout_marginBottom="16dp"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/userNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your Name"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:minHeight="50dp"
+                    android:padding="12dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Date Picker -->
-        <Button
-            android:id="@+id/selectDateButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Select Date"
-            android:background="@drawable/button_bg2"
-            android:textColor="@color/white"
-            android:layout_marginBottom="12dp"/>
 
-        <!-- Time Picker -->
-        <Button
-            android:id="@+id/selectTimeButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Select Time"
-            android:background="@drawable/button_bg"
-            android:textColor="@color/white"
-            android:layout_marginBottom="12dp"/>
+            <!-- Hospital Name -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/black"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
 
-        <!-- Request Appointment Button -->
-        <Button
-            android:id="@+id/requestAppointmentButton"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:text="Request Appointment"
-            android:background="@drawable/button_primary_bg"
-            android:textColor="@color/white"/>
-    </LinearLayout>
-</ScrollView>
+                <AutoCompleteTextView
+
+                    android:id="@+id/hospitalNameAutoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Hospital"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:minHeight="50dp"
+                    android:padding="12dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Hospital Code -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/black"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hospitalCodeTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hospital Code: "
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:padding="12dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Problem Description -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/black"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/problemDescriptionEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Describe your problem"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/grey"
+                    android:minHeight="100dp"
+                    android:padding="12dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Doctor Selection -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Doctor"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/doctorsRecyclerView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Date Picker -->
+            <Button
+                android:id="@+id/selectDateButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Select Date"
+                android:background="@drawable/button_bg"
+                android:textColor="@color/white"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Time Picker -->
+            <Button
+                android:id="@+id/selectTimeButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Select Time"
+                android:background="@drawable/button_bg"
+                android:textColor="@color/white"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Request Appointment Button -->
+            <Button
+                android:id="@+id/requestAppointmentButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Request Appointment"
+                android:background="@drawable/button_primary_bg"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

@@ -10,12 +10,22 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.content.Intent;
+import android.os.Handler;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
+import java.util.Arrays;
+import java.util.List;
+import com.example.myapplication34.SliderAdapter;
 public class UserHomeFragment extends Fragment {
 
-    private EditText searchBar;
+
+    private ViewPager2 viewPager2;
+    private List<Integer> imageList;
+    private Handler sliderHandler = new Handler();
+
     private RelativeLayout historyButton;
     private Button findDoctorButton;
-    private Button chatBoxButton;
+
     private  Button appointmentButton;
 
     private  Button emergencyServicesButton;
@@ -31,21 +41,36 @@ public class UserHomeFragment extends Fragment {
         // Initialize views
 
         // Add this in your view initialization
+        viewPager2 = view.findViewById(R.id.viewPager);
 
-        searchBar = view.findViewById(R.id.searchBar);
-        historyButton = view.findViewById(R.id.historyButton);
-        findDoctorButton = view.findViewById(R.id.findDoctorButton);
-        chatBoxButton = view.findViewById(R.id.chatBoxButton);
-         appointmentButton = view.findViewById(R.id.appointmentButton);
-        // Set up search bar
-        searchBar.setOnClickListener(v -> {
-            String query = searchBar.getText().toString().trim();
-            if (!query.isEmpty()) {
-                searchHospitalOrDoctor(query);
-            } else {
-                Toast.makeText(getContext(), "Please enter a search term", Toast.LENGTH_SHORT).show();
+        // Add advertisement images to list
+        imageList = Arrays.asList(
+                R.drawable.ad1,
+                R.drawable.ad2,
+                R.drawable.ad3,
+                R.drawable.ad4
+        );
+
+
+        SliderAdapter sliderAdapter = new SliderAdapter(requireContext(), imageList);
+
+        viewPager2.setAdapter(sliderAdapter);
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable, 2000); // Slide every 3 sec
             }
         });
+
+
+        historyButton = view.findViewById(R.id.historyButton);
+        findDoctorButton = view.findViewById(R.id.findDoctorButton);
+         appointmentButton = view.findViewById(R.id.appointmentButton);
+        // Set up search bar
+
 
         // Set up "Check Your History" button
         historyButton.setOnClickListener(v -> {
@@ -61,13 +86,7 @@ public class UserHomeFragment extends Fragment {
             }
         });
 
-        chatBoxButton.setOnClickListener(v -> {
-            Toast.makeText(v.getContext(), "Chatbox button clicked!", Toast.LENGTH_SHORT).show();
 
-            // Start the ChatbotActivity
-            Intent intent = new Intent(v.getContext(), chatbot.class);
-            v.getContext().startActivity(intent);
-        });
 
         // Set up "Find Doctor" button
         appointmentButton.setOnClickListener(v -> {
@@ -88,4 +107,12 @@ public class UserHomeFragment extends Fragment {
         // Implement search logic here
         Toast.makeText(getContext(), "Searching for: " + query, Toast.LENGTH_SHORT).show();
     }
+
+    private Runnable sliderRunnable = new Runnable() {
+        @Override
+        public void run() {
+            int nextSlide = (viewPager2.getCurrentItem() + 1) % imageList.size();
+            viewPager2.setCurrentItem(nextSlide);
+        }
+    };
 }

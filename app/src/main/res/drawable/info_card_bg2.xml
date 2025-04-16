@@ -1,0 +1,14 @@
+<!-- res/drawable/info_card_bg.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/cardBackground"/>
+    <corners android:radius="8dp"/>
+    <stroke
+        android:width="0.5dp"
+        android:color="@color/dividerColor"/>
+    <padding
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp"/>
+</shape>

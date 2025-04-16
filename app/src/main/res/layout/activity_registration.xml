@@ -42,32 +42,54 @@
                 android:layout_marginBottom="24dp"/>
 
             <!-- Email Field -->
-            <EditText
-                android:id="@+id/emailEditText"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
                 app:startIconDrawable="@drawable/ic_email"
-                android:textColor="@color/white"
-                android:textColorHint="@color/light_gray"
-                android:background="@drawable/rounded_input_field"
-                android:padding="12dp"
-                android:layout_marginBottom="16dp"/>
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/white"
+                    android:textColorHint="#CCFFFFFF"
+                    android:padding="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Password Field -->
-            <EditText
-                android:id="@+id/passwordEditText"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:textColor="@color/white"
-                android:textColorHint="@color/light_gray"
-                android:background="@drawable/rounded_input_field"
+                android:layout_marginBottom="16dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
                 app:startIconDrawable="@drawable/ic_password"
-                android:padding="12dp"
-                android:layout_marginBottom="16dp"/>
+                app:startIconTint="@color/white"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/white"
+                    android:textColorHint="#CCFFFFFF"
+                    android:padding="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Role Selection -->
             <TextView
@@ -115,44 +137,80 @@
             </RadioGroup>
 
             <!-- Dynamic Fields (Hidden initially) -->
-            <EditText
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/hospitalCodeEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Hospital Code"
                 android:inputType="text"
                 android:textColor="@color/white"
-                android:textColorHint="@color/light_gray"
-                android:background="@drawable/rounded_input_field"
                 android:padding="12dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="10dp"
                 android:visibility="gone"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/hospitalNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Hospital Name"
                 android:inputType="text"
                 android:textColor="@color/white"
-                android:textColorHint="@color/light_gray"
-                android:background="@drawable/rounded_input_field"
                 android:padding="12dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="10dp"
                 android:visibility="gone"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/doctorNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Doctor Name"
                 android:inputType="text"
                 android:textColor="@color/white"
-                android:textColorHint="@color/light_gray"
-                android:background="@drawable/rounded_input_field"
                 android:padding="12dp"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Doctor Fields (Visible for Doctor) -->
             <!-- Replace the specialization EditText with this Spinner -->
@@ -165,7 +223,20 @@
                 android:spinnerMode="dropdown"
                 android:layout_marginBottom="16dp"/>
 
-            <EditText
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/collegeNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -176,8 +247,23 @@
                 android:backgroundTint="@color/white"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/experienceEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -188,10 +274,26 @@
                 android:backgroundTint="@color/white"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
 
 
             <!-- Doctor ID Field (Visible for Doctor) -->
-            <EditText
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:boxBackgroundMode="outline"
+                app:boxBackgroundColor="@android:color/transparent"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconTint="@color/white"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/white">
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/doctorIdEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -202,6 +304,7 @@
                 android:backgroundTint="@color/white"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
 
 
@@ -214,7 +317,7 @@
                 android:background="@drawable/rounded_button"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginTop="5dp"/>
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

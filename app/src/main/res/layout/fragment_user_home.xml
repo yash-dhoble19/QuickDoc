@@ -7,29 +7,17 @@
     android:background="@color/white">
 
     <!-- Search Bar -->
-    <EditText
-        android:id="@+id/searchBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Search by hospital name, doctor, or hospital ID"
-        android:inputType="text"
-        android:padding="12dp"
-        android:background="@drawable/search_bar_background"
-        android:drawableStart="@drawable/search"
-        android:drawablePadding="8dp"
-        android:layout_marginBottom="16dp"
-        android:textColor="@color/black"
-        android:textColorHint="@color/grey"/>
+    =
 
     <!-- Check Your History Button -->
     <RelativeLayout
         android:id="@+id/historyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/searchBar"
+
         android:background="@drawable/history_button_background"
         android:padding="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="25dp"
         android:backgroundTint="@color/primaryColor">
 
         <TextView
@@ -59,12 +47,12 @@
         android:layout_marginTop="50dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="6dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="15dp"
         app:cardBackgroundColor="@color/cardBackground">
 
         <LinearLayout
             android:layout_width="370dp"
-            android:layout_height="405dp"
+            android:layout_height="match_parent"
             android:baselineAligned="true"
             android:orientation="vertical"
             android:padding="16dp">>
@@ -112,18 +100,6 @@
                     android:textSize="16sp" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/chatBoxButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/button_background"
-                android:backgroundTint="@color/accentColor"
-                android:text="Chatbox"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="6dp"
@@ -138,5 +114,13 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+
+        android:layout_marginTop="430dp" />
+
 
 </RelativeLayout>

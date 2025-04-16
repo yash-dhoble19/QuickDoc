@@ -25,8 +25,14 @@
     <color name="lightGrey">#DDDDDD</color>
     <color name="veryLightGrey">#F5F5F5</color>
     <color name="grey">#777777</color>
+    <!-- Semi-transparent black -->
 
+        <color name="colorPrimary">#6200EE</color>
+        <color name="colorPrimaryDark">#3700B3</color>
+        <color name="colorAccent">#03DAC5</color>
+        <color name="dividerColor">#33000000</color>
 
+    <color name="colorPrimaryLight">#64B5F6</color>
     <!-- Add these colors if missing -->
 
 </resources>

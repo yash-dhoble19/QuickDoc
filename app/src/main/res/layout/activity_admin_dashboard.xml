@@ -12,7 +12,7 @@
         android:id="@+id/feedbackTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Feedback and Complaints"
+        android:text="WELCOME ADMIN"
         android:textSize="18sp"
         android:textColor="@color/black"
         android:padding="16dp"
